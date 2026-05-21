@@ -75,7 +75,7 @@ The only part where it might be slightly confusing is the part where you need to
 > [!TIP]
 > Make sure to check and configure your settings to your liking before starting the download process, as defaults might be undesirable.
 >
-> ### Default Settings:
+> ### Default Settings
 >
 > | Setting/Config  | Default Value  |                                  Description                                  |
 > | :-------------: | :------------: | :---------------------------------------------------------------------------: |
