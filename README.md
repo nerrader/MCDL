@@ -8,7 +8,7 @@ I've always spent one to two hours just searching up and downloading those mods 
 
 ![mc-mod-downloader-preview-optimized](https://github.com/user-attachments/assets/5e0a90df-2c89-4431-97c0-d369cda49d15)
 
-# Features
+## Features
 
 - ### Interactive CLI Elements
 
@@ -30,7 +30,7 @@ I've always spent one to two hours just searching up and downloading those mods 
 
     You can customize settings and how this tool works in the main configuration menu.
 
-# How to Download/Install
+## How to Download/Install
 
 > [!NOTE]
 > Before using this tool, make sure you have:
@@ -53,7 +53,7 @@ I've always spent one to two hours just searching up and downloading those mods 
 >
 > If you are still curious or still skeptical of the safety of the .exe, feel free to run your own VirusTotal scan, or just check the source code that is available right here on GitHub. Everything's open source.
 
-# How to Use
+## How to Use
 
 > [!important]
 > These instructions are for users who are using the latest version of the `mc-mod-downloader`, if you are using an older version, some features may be unavailable, or the process may differ. I recommend updating this tool to the latest version for the best experience.
@@ -75,7 +75,7 @@ The only part where it might be slightly confusing is the part where you need to
 > [!TIP]
 > Make sure to check and configure your settings to your liking before starting the download process, as defaults might be undesirable.
 >
-> #### Default Settings:
+> ### Default Settings:
 >
 > | Setting/Config  | Default Value  |                                  Description                                  |
 > | :-------------: | :------------: | :---------------------------------------------------------------------------: |
@@ -96,7 +96,7 @@ If there are no tags on a mod in the main menu, it is a client side mod by defau
 | **[DEV]**  |    Developer    |                  Usually used for developers/server owners/creative mode                   |
 |  **[!]**   |     Caution     | May offer an unfair advantage, potential to you get banned from servers. Use with caution. |
 
-# Upcoming/Planned Features
+## Upcoming/Planned Features
 
 Here are some features that will be planned for future major/minor releases.
 
@@ -106,7 +106,7 @@ Here are some features that will be planned for future major/minor releases.
 - Logging and verbose mode
 - Adding more mods, mod categories and settings to make this tool even more customizable.
 
-# Contributing
+## Contributing
 
 This project welcomes all contributors, and whether you are fixing a bug, adding a new feature, or just improving the documentation of this project, you can get started by just following these steps:
 
