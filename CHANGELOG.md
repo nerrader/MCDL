@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 - Improved README.md layout and formatting
+- Changed the upcoming features in README.
 
 ## [3.3.1] - 2026-05-21
 
