@@ -50,7 +50,6 @@ def main_menu(
             - config.Config: The new modpack config.
     """
     initial_modlist: list[str] = []
-
     category_map: dict[str, str] = {
         "Optimization & Performance": "optimization_mods",
         "PVP & Combat": "pvp_mods",
