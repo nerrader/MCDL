@@ -604,7 +604,11 @@ def setup_logger(config: config.Config) -> None:
 
 def main() -> None:
     logger.remove()
-    # getting the json files
+
+    # this is in the main function because builder cant do it
+    # just so the config can actually write to file without any issues for first timers
+    const.MAIN_DATA_FILEPATH.mkdir(parents=True, exist_ok=True)
+
     configs = config.Config.get_or_create_config()
     setup_logger(configs)
     mods_json, id_slug_map = builder.main()

@@ -125,7 +125,6 @@ def _checkup_files(api_session: requests.Session) -> None:
 
 
 def main() -> tuple[dict[str, Any], dict[str, Any]]:
-    const.MAIN_DATA_FILEPATH.mkdir(parents=True, exist_ok=True)
     with requests.Session() as session:
         session.headers.update({"User-Agent": const.USER_AGENT})
         while True:
