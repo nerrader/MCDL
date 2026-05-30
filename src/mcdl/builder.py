@@ -116,12 +116,11 @@ def _checkup_files(api_session: requests.Session) -> None:
         logger.critical(f"Error during file checkup: {repr(error)}")
         print(f"Critical Error: {str(error)}", style="error")
         print(
-            "\nThis was either caused by the server or the client, maybe check your internet connection",
+            "\nThis was either caused by the server or the client, check your internet connection",
             style="error",
         )
-        raise SystemExit(
-            "The app cannot continue due to the above error, exiting now"
-        ) from error
+        input("The app cannot continue due to the above error, please enter to exit.")
+        raise SystemExit()
 
 
 def main() -> tuple[dict[str, Any], dict[str, Any]]:
