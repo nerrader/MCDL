@@ -7,9 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- Improved README.md layout and formatting
+- Improved README.md layout and formatting.
 - Changed the upcoming features in README.
-- Changed the error handling when HTTP requests fail in builder.py
+- Fixed a bug where essential files and folders were not being made during the initialization of the tool.
+- Changed the error handling when HTTP requests fail in builder.py.
+- Changed the icon filename in assets/ from exe-icon to mcdl-icon.
 
 ## [3.3.1] - 2026-05-21
 
