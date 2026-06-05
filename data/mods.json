@@ -21,6 +21,11 @@
             "loaders": ["forge", "neoforge"]
         },
         {
+            "name": "Embeddium (Rubidium) Extras",
+            "value": "rubidium-extra",
+            "loaders": ["forge", "neoforge"]
+        },
+        {
             "name": "Canary",
             "value": "canary",
             "loaders": ["forge"]
