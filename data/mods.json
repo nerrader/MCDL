@@ -113,7 +113,7 @@
         {
             "name": "ForceCloseWorldLoadingScreen",
             "value": "forcecloseworldloadingscreen",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Iris Shaders",
@@ -150,7 +150,7 @@
         {
             "name": "Status Effect Timer",
             "value": "statuseffecttimer",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Uku's Armor HUD",
@@ -160,12 +160,12 @@
         {
             "name": "Centered Crosshair",
             "value": "centered-crosshair",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Shield Status",
             "value": "shield-statuses",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Crosshair Addons Public",
@@ -197,7 +197,7 @@
         {
             "name": "No Resource Pack Warnings",
             "value": "no-resource-pack-warnings",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "[S] Sit",
@@ -212,7 +212,7 @@
         {
             "name": "Your Options Shall Be Respected",
             "value": "yosbr",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         }
     ],
     "building_mods": [
@@ -306,7 +306,7 @@
         {
             "name": "Smooth Scrolling",
             "value": "smooth-scroll",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Wavey Capes",
@@ -321,7 +321,7 @@
         {
             "name": "Better Snow Coverage",
             "value": "better-snow-coverage",
-            "loaders": ["fabric", "forge", "neoforge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Continuity",
@@ -376,7 +376,7 @@
         {
             "name": "Falling Leaves",
             "value": "fallingleaves",
-            "loaders": ["fabric", "forge", "neoforge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Eating Animation",
@@ -428,7 +428,7 @@
         {
             "name": "[MP] More Chat History",
             "value": "morechathistory",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "Beautified Chat Cilent",
@@ -443,7 +443,7 @@
         {
             "name": "Sprint Indicator",
             "value": "sprint-indicator",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
         },
         {
             "name": "[MP] [!] Xaero's Minimap",
@@ -619,7 +619,7 @@
         {
             "name": "More Mouse Tweaks",
             "value": "moremousetweaks",
-            "loaders": ["fabric", "forge", "neoforge"]
+            "loaders": ["fabric", "neoforge"]
         },
         {
             "name": "Stack Refill",
