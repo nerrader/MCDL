@@ -29,7 +29,7 @@ print = const.CONSOLE.print
 @dataclass
 class DownloadContext:
     config: config.Config
-    id_slug_map: dict[str, str]
+    id_slug_map: dict[str, str] = field(default_factory=dict)
     visited_mod_ids: set[str] = field(default_factory=set, repr=False)
     full_modlist: list[dict[str, str]] = field(default_factory=list)
     failed_mods: list[dict[str, str]] = field(default_factory=list)

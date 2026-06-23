@@ -153,9 +153,9 @@
             "loaders": ["fabric", "forge", "neoforge"]
         },
         {
-            "name": "Status Effect Timer",
-            "value": "statuseffecttimer",
-            "loaders": ["fabric"]
+            "name": "(Status) Effect Timer Plus",
+            "value": "effecttimerplus",
+            "loaders": ["fabric", "forge", "neoforge"]
         },
         {
             "name": "Uku's Armor HUD",
@@ -178,9 +178,14 @@
             "loaders": ["fabric"]
         },
         {
-            "name": "Better Ping Display",
+            "name": "Better Ping Display [Fabric]",
             "value": "better-ping-display-fabric",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric"]
+        },
+        {
+            "name": "Better Ping Display [Forge/Neoforge]",
+            "value": "better-ping-display",
+            "loaders": ["neoforge", "forge"]
         },
         {
             "name": "[!] Attack Through Grass",
