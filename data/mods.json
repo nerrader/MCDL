@@ -366,7 +366,7 @@
         {
             "name": "Particle Rain",
             "value": "particle-rain",
-            "loaders": ["fabric", "forge"]
+            "loaders": ["fabric", "forge", "neoforge"]
         },
         {
             "name": "Amendments",
@@ -439,11 +439,6 @@
             "name": "EMI",
             "value": "emi",
             "loaders": ["fabric", "forge", "neoforge"]
-        },
-        {
-            "name": "[MP] More Chat History",
-            "value": "morechathistory",
-            "loaders": ["fabric"]
         },
         {
             "name": "Beautified Chat Cilent",
