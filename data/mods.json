@@ -232,6 +232,11 @@
             "loaders": ["fabric"]
         },
         {
+            "name": "Visible Barriers",
+            "value": "visiblebarriers",
+            "loaders": ["fabric"]
+        },
+        {
             "name": "[!] Accurate Block Placement",
             "value": "accurate-block-placement-reborn",
             "loaders": ["fabric"]
