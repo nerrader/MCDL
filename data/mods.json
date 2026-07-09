@@ -316,7 +316,7 @@
         {
             "name": "Chat Animation",
             "value": "chatanimation",
-            "loaders": ["fabric"]
+            "loaders": ["fabric", "forge", "neoforge"]
         },
         {
             "name": "Smooth Scrolling",
