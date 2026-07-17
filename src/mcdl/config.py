@@ -269,3 +269,5 @@ def main_settings_loop(original_config: Config) -> Config:
                     "Settings changes cancelled by user, exiting settings menu."
                 )
                 return original_config
+            case _:
+                pass

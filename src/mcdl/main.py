@@ -3,7 +3,6 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from sys import exit as sysexit, stderr
 from typing import Any
-
 from loguru import logger
 import questionary
 import requests
@@ -29,15 +28,16 @@ print = const.CONSOLE.print
 @dataclass
 class DownloadContext:
     config: config.Config
-    id_slug_map: dict[str, str] = field(default_factory=dict)
-    visited_mod_ids: set[str] = field(default_factory=set, repr=False)
-    full_modlist: list[dict[str, str]] = field(default_factory=list)
-    failed_mods: list[dict[str, str]] = field(default_factory=list)
+    id_slug_map: dict[str, str] = field(default_factory=dict[str, str])
+    visited_mod_ids: set[str] = field(default_factory=set[str], repr=False)
+    full_modlist: list[dict[str, str]] = field(default_factory=list[dict[str, str]])
+    failed_mods: list[dict[str, str]] = field(default_factory=list[dict[str, str]])
     dependency_mods_counter: int = field(default=0)
 
 
 def main_menu(
-    current_config: config.Config, json_modlist_data: dict[str, list]
+    current_config: config.Config,
+    json_modlist_data: dict[str, list[dict[str, str]] | list[str]],
 ) -> tuple[list[str], config.Config]:
     """Displays a questionary UI to choose mods and configure settings.
 
@@ -89,8 +89,10 @@ def main_menu(
             case "cancel":
                 logger.debug("User chose to cancel, exiting program.")
                 sysexit(0)
+            case _:
+                pass
 
-        mods_in_category: list[dict[str, str]] = json_modlist_data[category_map_value]
+        mods_in_category: list[dict[str, str]] = json_modlist_data[category_map_value]  # type: ignore
 
         mod_choices = [
             questionary.Choice(
@@ -242,8 +244,8 @@ def get_mods(
             raise ValueError("Target mod version contains no files.")
 
         target_file = next((file for file in files if file["primary"]), files[0])
-        target_filename = target_file["filename"]
-        target_url = target_file["url"]
+        target_filename: str = target_file["filename"]
+        target_url: str = target_file["url"]
 
         if not target_filename or not target_url:
             logger.error(
@@ -261,7 +263,7 @@ def get_mods(
         download_context.failed_mods.append({"slug": mod_slug, "cause": str(error)})
         return []
 
-    collected_mods = [
+    collected_mods: list[dict[str, str]] = [
         {"slug": mod_slug, "filename": target_filename, "url": target_url}
     ]
     resolved_dependencies = resolve_dependencies(
@@ -617,18 +619,17 @@ def main() -> None:
     initial_modlist, new_config = main_menu(configs, mods_json)
     download_context = DownloadContext(new_config, id_slug_map)
 
+    # helper function to get strict type checking for executor.map() function to work properly
+    def _process_mod(mod_slug: str) -> None:
+        get_mods(slug_to_id(mod_slug, id_slug_map), api_session, download_context)
+
     # session so the tcp connection doesnt reset
     with requests.Session() as api_session:
         api_session.headers.update({"User-Agent": const.USER_AGENT})
 
         # threadpoolexecutor to allow multiple thread execution (async pretty much)
         with ThreadPoolExecutor() as executor:
-            results = executor.map(
-                lambda mod: get_mods(
-                    slug_to_id(mod, id_slug_map), api_session, download_context
-                ),
-                initial_modlist,
-            )
+            results = executor.map(_process_mod, initial_modlist)
 
             for mod_data in results:
                 if mod_data is not None:

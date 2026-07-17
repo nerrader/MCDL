@@ -25,7 +25,7 @@ def _get_mods_json(api_session: requests.Session) -> bool:
 
     etag_filepath = const.MAIN_DATA_FILEPATH / "mods.etag"
     mods_url = "https://raw.githubusercontent.com/nerrader/nerraders-mc-mod-downloader/refs/heads/main/data/mods.json"
-    api_headers = {}
+    api_headers: dict[str, str] | None = {}
     if etag_filepath.exists():
         api_headers["If-None-Match"] = etag_filepath.read_text().strip()
     response = api_session.get(mods_url, headers=api_headers, timeout=const.API_TIMEOUT)
@@ -53,7 +53,9 @@ def _get_slugslist() -> list[str]:
     """
     logger.info("Getting the slugslist from mods.json")
     slugslist: list[str] = []
-    modslist: dict[str, Any] = storage.load_json(const.MODS_FILEPATH)
+    modslist: dict[str, list[dict[str, str]] | list[str]] = storage.load_json(
+        const.MODS_FILEPATH
+    )
 
     for category_mods in modslist.values():
         slugslist.extend(
@@ -72,7 +74,6 @@ def _modify_slugsmap(slugslist: list[str], api_session: requests.Session) -> Non
     logger.info("Modifying the idslugmap")
 
     try:
-        id_slug_map: dict = {}
         API_URL = "https://api.modrinth.com/v2/projects"
         api_params = {"ids": json.dumps(slugslist)}
         response = api_session.get(
